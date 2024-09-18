@@ -18,6 +18,8 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float groundCheckVariations = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] private GameObject light;
+    private bool islookingRight;
 
 
     // Start is called before the first frame update
@@ -75,10 +77,12 @@ public class MovementController : MonoBehaviour
         movY = 0;
         if (Input.GetKey(KeyCode.A))
         {
+            islookingRight = false;
             movX = -1;
         }
         if (Input.GetKey(KeyCode.D))
         {
+            islookingRight = true;
             movX = 1;
 
         }
@@ -91,6 +95,15 @@ public class MovementController : MonoBehaviour
         {
             movY = -1;
 
+        }
+
+        if(islookingRight == false)
+        {
+            light.transform.rotation = Quaternion.Euler(new Vector3(light.transform.rotation.x, 180, light.transform.rotation.z));
+        }
+        else
+        {
+            light.transform.rotation = Quaternion.Euler(new Vector3(light.transform.rotation.x, 0, light.transform.rotation.z));
         }
     }
 }
