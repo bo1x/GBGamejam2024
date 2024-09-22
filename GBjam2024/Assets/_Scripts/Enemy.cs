@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool AlreadyAttacked;
     [SerializeField] private int Damage;
     [SerializeField] private float enemySpeed;
-
+    private bool islookingRight;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject AttackColliderGO;
     [SerializeField] private GameObject hitlight;
@@ -24,8 +24,11 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb2d;
     private bool hitisplaying = false;
 
+    private SpriteRenderer spriteRenderer;
+
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         actualHP = MaxHP;
     }
@@ -57,6 +60,14 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("MOVING");
             Vector2 dir = new Vector2(playerPos.x-transform.position.x, playerPos.y-transform.position.y);
+            if (dir.x>0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if(dir.x<0){
+                spriteRenderer.flipX = false;
+
+            }
             rb2d.velocity = dir.normalized * enemySpeed;
 
             if (Vector2.Distance(transform.position,playerPos)<1.7f)

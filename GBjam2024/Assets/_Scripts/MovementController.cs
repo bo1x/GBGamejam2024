@@ -83,7 +83,7 @@ public class MovementController : MonoBehaviour
 
     public void unblockAnimOnDamage()
     {
-        PlayerLIGHT.SetActive(true);
+        PlayerLIGHT.SetActive(false);
         animBlock = false;
     }
     public void LoseHP(int damage)
