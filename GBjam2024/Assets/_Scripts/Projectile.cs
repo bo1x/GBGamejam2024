@@ -6,7 +6,8 @@ public class Projectile : MonoBehaviour
 {
     private Vector2 _dir;
     private Rigidbody2D _rigidbody;
-    [SerializeField]private float _speed;
+    [SerializeField] private float _speed;
+    [SerializeField] private int damage;
 
     void Start()
     {
@@ -35,7 +36,10 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("HIT SOMETHING");
+        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy SCRIPT))
+        {
+            SCRIPT.LoseHP(damage);
+        }
         Destroy(this.gameObject);
     }
 }

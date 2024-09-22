@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
@@ -34,6 +35,8 @@ public class MovementController : MonoBehaviour
     private charState _charState = charState.Idle;
     private usingItem _usingItem = usingItem.flashlight;
 
+    [SerializeField] private int actualHP;
+    [SerializeField] private int maxHP;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +56,39 @@ public class MovementController : MonoBehaviour
         Attack();
 
 
+        if (actualHP <=0)
+        {
+            Debug.Log("DEAD");
+        }
 
+    }
+
+    public void LoseHP(int damage)
+    {
+        int tempactualHP = actualHP-damage;
+        if (tempactualHP-damage<=0)
+        {
+            actualHP = 0;
+            dead();
+        }
+        else
+        {
+            actualHP = tempactualHP;
+        }
+        Debug.Log(actualHP);
+        
+    }
+    public void Heal(int heal)
+    {
+        actualHP = actualHP + heal;
+        if (actualHP>maxHP)
+        {
+            actualHP = maxHP;
+        }
+    }
+
+    private void dead()
+    {
 
     }
 
