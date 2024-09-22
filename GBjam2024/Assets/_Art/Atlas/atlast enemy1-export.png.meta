@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 500fdedd9e7c6c746a982b8e1463e9cd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: atlast enemy1-export_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 72
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2311f4fa57df04b883890e88065688
+      internalID: -1177468152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 72
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cd179c9bdeb1341abda44023b33458
+      internalID: -1486270627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 72
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02410793e137634cbce48af82c6f2d5
+      internalID: -347751509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a252c91656e814690f9475741aa4fe
+      internalID: -1592589573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 72
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19c3108b2e3c0a468a1d377fbc09c63
+      internalID: -476900667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 72
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e182e5501c3752d418e637070d7ee542
+      internalID: 87006210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_6
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 72
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8263b0207b101d74192026500699e260
+      internalID: 50903898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_7
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 72
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73b918a0dae67642a2ce597b8648168
+      internalID: -1357964685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95fe45e54f360a74fb4a0d346d1aeb79
+      internalID: 1435281356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 48
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cff98fa361a2d4cbfcb17d1fd516b3
+      internalID: 17952840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_10
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 48
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee12e12001ecdf5418b45139432c2036
+      internalID: -1659328201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_11
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 48
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8833cff8d01ae524a83fe683e7b11c28
+      internalID: 422361681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_12
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 48
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980c07b303f2dd64fa55c5fef88193ec
+      internalID: 1161222233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_13
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 48
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b661a178ab1df4b860961b65a7bbf6
+      internalID: 1512721210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_14
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 48
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66ab83ad6dfdf643b80c1127ccc7a4b
+      internalID: -1817205050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 24
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ddb253b5a334c48833ec6fc388962b
+      internalID: 1684779476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 24
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a1390477142e44cbbf51073cb878a9
+      internalID: 1051970659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_17
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5b18094c3c42d448d9f2311443119b
+      internalID: 106386758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_18
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 24
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5661a8c7fa363342b16f330ad7e44a0
+      internalID: 656322733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_19
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 24
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002ab570185c6ba42818140108665747
+      internalID: -2107430589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_20
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 24
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e562437c24d2541a7e3111b7c172ee
+      internalID: -1459702411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_21
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 24
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be849836bd1f0645b8782f290ded3a7
+      internalID: -821418635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_22
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 24
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355aaa5b02783e847a842557a870549c
+      internalID: 1030123158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_23
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 34
+        height: 23
+      alignment: 9
+      pivot: {x: 0.4013546, y: 0.4817723}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c44a8cc719f42f4a98fe68cce0af3dd
+      internalID: -1842406831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_24
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 24
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5f6149d7e6f0b4cb0b925a664e0eaa
+      internalID: 467736853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_25
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 2
+        width: 42
+        height: 17
+      alignment: 9
+      pivot: {x: 0.2777957, y: 0.46568927}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b2404dd54a5f743be2ed5d3edd7352
+      internalID: -952727581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_26
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 0
+        width: 42
+        height: 15
+      alignment: 9
+      pivot: {x: 0.22209966, y: 0.5208892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d1a8e7a56fbde4daf1834eb775c6c6
+      internalID: 2034174447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_27
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 42
+        height: 9
+      alignment: 9
+      pivot: {x: 0.24472554, y: 0.86256397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9430282166e07409af9b093668c690
+      internalID: 1136452527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 43
+        height: 10
+      alignment: 9
+      pivot: {x: 0.21450593, y: 0.90920526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be28424eaf7ff9c4dadbb92a72bda75a
+      internalID: 332018603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlast enemy1-export_29
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3d961bc95585241893dc2c62796677
+      internalID: -2123672994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      atlast enemy1-export_0: -1177468152
+      atlast enemy1-export_1: -1486270627
+      atlast enemy1-export_10: -1659328201
+      atlast enemy1-export_11: 422361681
+      atlast enemy1-export_12: 1161222233
+      atlast enemy1-export_13: 1512721210
+      atlast enemy1-export_14: -1817205050
+      atlast enemy1-export_15: 1684779476
+      atlast enemy1-export_16: 1051970659
+      atlast enemy1-export_17: 106386758
+      atlast enemy1-export_18: 656322733
+      atlast enemy1-export_19: -2107430589
+      atlast enemy1-export_2: -347751509
+      atlast enemy1-export_20: -1459702411
+      atlast enemy1-export_21: -821418635
+      atlast enemy1-export_22: 1030123158
+      atlast enemy1-export_23: -1842406831
+      atlast enemy1-export_24: 467736853
+      atlast enemy1-export_25: -952727581
+      atlast enemy1-export_26: 2034174447
+      atlast enemy1-export_27: 1136452527
+      atlast enemy1-export_28: 332018603
+      atlast enemy1-export_29: -2123672994
+      atlast enemy1-export_3: -1592589573
+      atlast enemy1-export_4: -476900667
+      atlast enemy1-export_5: 87006210
+      atlast enemy1-export_6: 50903898
+      atlast enemy1-export_7: -1357964685
+      atlast enemy1-export_8: 1435281356
+      atlast enemy1-export_9: 17952840
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

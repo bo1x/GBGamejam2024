@@ -19,7 +19,6 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         _rigidbody.velocity = _dir * _speed;
-        Debug.Log(_rigidbody.velocity);
     }
 
     public void setDir(Vector2 dir)

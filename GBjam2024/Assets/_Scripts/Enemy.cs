@@ -14,10 +14,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int Damage;
     [SerializeField] private float enemySpeed;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject AttackColliderGO;
+    [SerializeField] private GameObject hitlight;
+    [SerializeField] private float timeLight;
     private bool agroo;
     private Vector2 playerPos;
-
+    private bool Attacking;
     private Rigidbody2D rb2d;
+    private bool hitisplaying = false;
 
     private void Start()
     {
@@ -40,7 +45,12 @@ public class Enemy : MonoBehaviour
 
     private void MoveToPlayer()
     {
-        
+        if (Attacking)
+        {
+            return;
+        }
+
+        animator.Play("MonsterWalk");
         playerPos = Singleton.Instance.GetPlayerPosition();
        // if (Vector2.Distance(playerPos, transform.position) > 10f) { agroo = false;return; }
         if (playerPos != null) 
@@ -48,6 +58,12 @@ public class Enemy : MonoBehaviour
             Debug.Log("MOVING");
             Vector2 dir = new Vector2(playerPos.x-transform.position.x, playerPos.y-transform.position.y);
             rb2d.velocity = dir.normalized * enemySpeed;
+
+            if (Vector2.Distance(transform.position,playerPos)<1.7f)
+            {
+                Attacking = true;
+                animator.Play("MonsterAttack");
+            }
         }
     }
 
@@ -55,7 +71,6 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Luz"))
         {
-            Debug.Log("AGRO ONLINE");
             agroo = true;
         }
     }
@@ -80,15 +95,23 @@ public class Enemy : MonoBehaviour
 
     public void LoseHP(int damage)
     {
+        hitlight.SetActive(true);
+        
         int tempactualHP = actualHP - damage;
         if (tempactualHP - damage <= 0)
         {
             actualHP = 0;
+
             dead();
         }
         else
         {
             actualHP = tempactualHP;
+            if (hitisplaying) { return; }
+            hitisplaying = true;
+            animator.Play("MonsterHit");
+            StartCoroutine(LightHit(timeLight));
+
         }
         Debug.Log(actualHP);
 
@@ -104,7 +127,11 @@ public class Enemy : MonoBehaviour
 
     private void dead()
     {
-        Destroy(this.gameObject);
+        Attacking = true;
+        rb2d.velocity = Vector3.zero;
+        animator.Play("MonsterDead");
+        AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
+        StartCoroutine(DieIn(clipInfo[0].clip.length));
     }
 
     IEnumerator AttackCOOLDOWNRESET()
@@ -112,5 +139,35 @@ public class Enemy : MonoBehaviour
         
         yield return new WaitForSeconds(AttackCD);
         AlreadyAttacked = false;
+    }
+
+    IEnumerator DieIn(float time)
+    {
+
+        yield return new WaitForSeconds(time);
+        Destroy(this.gameObject);
+    }
+
+    public void ActivateAttackCollider()
+    {
+        AttackColliderGO.SetActive(true);
+    }
+
+    public void DesactivateAttackCollider()
+    {
+        animator.Play("MonsterStop");
+        Attacking = false;
+        AttackColliderGO.SetActive(false);
+    }
+
+    IEnumerator LightHit(float time)
+    {
+        yield return new WaitForSeconds(time);
+        hitlight.SetActive(false);
+    }
+
+    public void setHitFalse()
+    {
+        hitisplaying = false;
     }
 }

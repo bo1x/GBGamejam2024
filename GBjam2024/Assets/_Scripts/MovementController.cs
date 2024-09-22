@@ -20,6 +20,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float groundCheckVariations = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] private GameObject PlayerLIGHT;
     [SerializeField] private GameObject FlashLight;
     [SerializeField] private GameObject ShootLight;
     [SerializeField] private float ShootLightTime;
@@ -41,7 +42,7 @@ public class MovementController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI textHP;
     [SerializeField] private TextMeshProUGUI textItem;
-
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private Animator animator;
     private bool animBlock = false;
@@ -76,11 +77,13 @@ public class MovementController : MonoBehaviour
 
     public void blockAnimOnDamage()
     {
+        PlayerLIGHT.SetActive(true);
         animBlock = true;
     }
 
     public void unblockAnimOnDamage()
     {
+        PlayerLIGHT.SetActive(true);
         animBlock = false;
     }
     public void LoseHP(int damage)
@@ -247,11 +250,13 @@ public class MovementController : MonoBehaviour
     {
         if (islookingRight == false)
         {
+            spriteRenderer.flipX = true;
             FlashLight.transform.rotation = Quaternion.Euler(new Vector3(FlashLight.transform.rotation.x, 180, FlashLight.transform.rotation.z));
             ShootLight.transform.rotation = Quaternion.Euler(new Vector3(FlashLight.transform.rotation.x, 180, FlashLight.transform.rotation.z));
         }
         else
         {
+            spriteRenderer.flipX = false;
             FlashLight.transform.rotation = Quaternion.Euler(new Vector3(FlashLight.transform.rotation.x, 0, FlashLight.transform.rotation.z));
             ShootLight.transform.rotation = Quaternion.Euler(new Vector3(FlashLight.transform.rotation.x, 0, FlashLight.transform.rotation.z));
         }
