@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using TMPro;
 
 public class MovementController : MonoBehaviour
 {
@@ -38,10 +39,19 @@ public class MovementController : MonoBehaviour
     [SerializeField] private int actualHP;
     [SerializeField] private int maxHP;
 
+    [SerializeField] private TextMeshProUGUI textHP;
+    [SerializeField] private TextMeshProUGUI textItem;
+
+
+    [SerializeField] private Animator animator;
+    private bool animBlock = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        textHP.text = actualHP.ToString();
+        textItem.text = "Flashlight";
     }
 
     // Update is called once per frame
@@ -50,6 +60,7 @@ public class MovementController : MonoBehaviour
         GroundCheck();
         WallCheck();
         GetInputs();
+        if (animBlock) { return; }
         CheckCharDir();
         Walk(movX);
         Jump(movY);
@@ -63,8 +74,20 @@ public class MovementController : MonoBehaviour
 
     }
 
+    public void blockAnimOnDamage()
+    {
+        animBlock = true;
+    }
+
+    public void unblockAnimOnDamage()
+    {
+        animBlock = false;
+    }
     public void LoseHP(int damage)
     {
+        blockAnimOnDamage();
+        animator.Play("PlayerHurt");
+        AudioManager.instance.PlaySFX("playerHurt");
         int tempactualHP = actualHP-damage;
         if (tempactualHP-damage<=0)
         {
@@ -75,8 +98,7 @@ public class MovementController : MonoBehaviour
         {
             actualHP = tempactualHP;
         }
-        Debug.Log(actualHP);
-        
+        textHP.text = actualHP.ToString();
     }
     public void Heal(int heal)
     {
@@ -85,6 +107,7 @@ public class MovementController : MonoBehaviour
         {
             actualHP = maxHP;
         }
+        textHP.text = actualHP.ToString();
     }
 
     private void dead()
@@ -115,12 +138,50 @@ public class MovementController : MonoBehaviour
     {
         if (groundCheck == false) { return;}
         if (movY == 0) { return; }
+        AudioManager.instance.PlaySFX("Jump");
         rb.velocity = new Vector2(rb.velocity.x, movY * JumpSpeed);
     }
 
     private void Walk(float movX)
     {
         rb.velocity = new Vector2(movX * speed, rb.velocity.y);
+        if (animBlock) { return; }
+        if (groundCheck == false)
+        {
+            if (_usingItem == usingItem.flashlight)
+            {
+                animator.Play("IdleFlashlight");
+            }
+            if (_usingItem == usingItem.gun)
+            {
+                animator.Play("IdleShotgun");
+            }
+        }
+        else if(movX != 0) 
+        {
+            if (_usingItem == usingItem.flashlight)
+            {
+                animator.Play("PlayerRunFlashlight");
+            }
+            else if(_usingItem == usingItem.gun)
+            {
+                animator.Play("PlayerRunShotgun");
+
+            }
+        }
+        else if(movX == 0)
+        {
+            if (_usingItem == usingItem.flashlight)
+            {
+                animator.Play("IdleFlashlight");
+            }
+            else if (_usingItem == usingItem.gun)
+            {
+                animator.Play("IdleShotgun");
+
+            }
+        }
+       
     }
 
     private void GetInputs()
@@ -150,13 +211,16 @@ public class MovementController : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.L))
         {
+            AudioManager.instance.PlaySFX("switchItem");
             if (_usingItem == usingItem.gun)
             {
+                textItem.text = "Flashlight";
                 _usingItem = usingItem.flashlight;
                 FlashLight.SetActive(true);
             }
             else
             {
+                textItem.text = "Shotgun";
                 _usingItem = usingItem.gun;
                 FlashLight.SetActive(false);
 
@@ -198,6 +262,8 @@ public class MovementController : MonoBehaviour
         if (!attack) { return; }
         if (_usingItem == usingItem.flashlight)
         {
+            AudioManager.instance.PlaySFX("lanternswitch");
+
             if (FlashLight.gameObject.activeSelf == true)
             {
                 FlashLight.gameObject.SetActive(false);
@@ -211,8 +277,10 @@ public class MovementController : MonoBehaviour
 
         if (_usingItem == usingItem.gun)
         {
+            
             if (canAttack)
             {
+                AudioManager.instance.PlaySFX("playerShoot");
                 canAttack = false;
                 StartCoroutine(startAttackCD());
                 StartCoroutine(startShotgunLight());
@@ -231,6 +299,10 @@ public class MovementController : MonoBehaviour
                             pro.setSpeed(UnityEngine.Random.Range(9f, 15f));
                         }
                 }
+            }
+            else
+            {
+                AudioManager.instance.PlaySFX("Reloading");
             }
 
 

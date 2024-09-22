@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        actualHP = MaxHP;
     }
     private void Update()
     {
@@ -59,17 +60,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
+        if (AlreadyAttacked)
+        {
+            return;
+        }
         if (collision.gameObject.TryGetComponent<MovementController>(out MovementController PlayerScript))
         {
             Debug.Log("playeratttacked");
             PlayerScript.LoseHP(Damage);
             AlreadyAttacked = true;
             StartCoroutine(AttackCOOLDOWNRESET());
-            
+
         }
     }
+
 
     public void LoseHP(int damage)
     {
@@ -97,7 +104,7 @@ public class Enemy : MonoBehaviour
 
     private void dead()
     {
-
+        Destroy(this.gameObject);
     }
 
     IEnumerator AttackCOOLDOWNRESET()
