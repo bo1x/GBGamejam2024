@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     private Vector2 _dir;
     private Rigidbody2D _rigidbody;
@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
 
     public void setDir(Vector2 dir)
     {
-        _dir = dir;
+        _dir = dir.normalized;
     }
 
     public void setSpeed(float speed)
@@ -35,14 +35,10 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy SCRIPT))
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.TryGetComponent<MovementController>(out MovementController SCRIPT))
         {
             SCRIPT.LoseHP(damage);
-        }
-
-        if (collision.gameObject.TryGetComponent<EyeGetDamaged>(out EyeGetDamaged Eyescript))
-        {
-            Eyescript.damaged();
         }
         Destroy(this.gameObject);
     }

@@ -218,7 +218,7 @@ MonoBehaviour:
   shootingPoint: {fileID: 2964990454583047324}
   particles: {fileID: 0}
   actualHP: 6
-  maxHP: 10
+  maxHP: 12
   textHP: {fileID: 0}
   textItem: {fileID: 0}
   spriteRenderer: {fileID: 6725823029751674310}

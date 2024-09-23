@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MovementController : MonoBehaviour
 {
@@ -47,17 +48,23 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Animator animator;
     private bool animBlock = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         textHP.text = actualHP.ToString();
         textItem.text = "Flashlight";
+        actualHP = maxHP;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (actualHP <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         GroundCheck();
         WallCheck();
         GetInputs();
@@ -68,10 +75,7 @@ public class MovementController : MonoBehaviour
         Attack();
 
 
-        if (actualHP <=0)
-        {
-            Debug.Log("DEAD");
-        }
+
 
     }
 
@@ -95,6 +99,7 @@ public class MovementController : MonoBehaviour
         if (tempactualHP-damage<=0)
         {
             actualHP = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             dead();
         }
         else
